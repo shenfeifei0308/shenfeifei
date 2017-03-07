@@ -39,7 +39,7 @@ p {
 #video {
 	visibility: hidden;
 } 
-
+/
 </style>
  <script>
  setInterval(function(){
@@ -49,7 +49,7 @@ p {
     , ("0" + date.getMinutes()).substr(-2)
     , ("0" + date.getSeconds()).substr(-2)
   ].join(":");
-   
+.   
   document.getElementById("output").innerHTML = format;
 }, 500);
 </script>
@@ -84,9 +84,9 @@ p {
 <script>
 var myvid = document.getElementById('myvideo');
 var myvids = [
-  "assets/video1.ogg",
-  "assets/video2.ogg",
-  "assets/video3.ogg"
+  "./assets/video1.ogg",
+  "./assets/video2.ogg",
+  "./assets/video3.ogg"
   ];
 var activeVideo = 0;
 
