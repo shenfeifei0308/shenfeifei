@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Tokyo Ghoul</title>
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel='stylesheet prefetch' href='css/demo.css'>
+  <link rel="stylesheet" href="css/style.css">
+<style>
+
+@font-face {
+	font-family: 'Digital-7';
+	src: url(./font/digital-7.ttf);
+}
+
+@font-face {
+	font-family: 'Got No Time For That';
+	src: url(./font/Got_No_Time_For_That.ttf);
+}
+
+body {
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+a img {
+	width: 25px;
+}
+
+p {
+	font-family: Got No Time For That;
+	font-size:12pt;
+	font-weight:100;
+	text-shadow: 1px 1px 1px #000;
+}
+
+#video {
+	visibility: hidden;
+} 
+
+</style>
+ <script>
+ setInterval(function(){
+  var date = new Date();
+  var format = [
+      ("0" + date.getHours()).substr(-2)
+    , ("0" + date.getMinutes()).substr(-2)
+    , ("0" + date.getSeconds()).substr(-2)
+  ].join(":");
+   
+  document.getElementById("output").innerHTML = format;
+}, 500);
+</script>
+</head>
+
+<body>
+  <div id="container">
+    <img src="./images/1.jpg">
+    <img src="./images/2.jpg">
+	<img src="./images/3.jpg">
+	<img src="./images/4.jpg">
+</div>
+  <div id="large-header" class="large-header">
+
+  <canvas id="demo-canvas"></canvas>
+    <h1 class="main-title"><div id="output"></div><div><p>
+	<a href="#">
+    <img src="./images/handprint.png" 
+    onmouseover="this.src='./images/handprint_hov.png'"
+    onmouseout="this.src='./images/handprint.png'" border="0" alt=""/></a> HERB C</p></div></h1>
+
+<script src="js/Pack.min.js"></script>
+<script src="js/node.js"></script>
+<script src="js/Lite.min.js"></script>
+<script src="js/index.js"></script>
+</div>
+<div id="video">
+<canvas>
+<video src="assets/video1.ogg" id="myvideo" width="320" height="240" controls style="background:black" autoplay>
+</video>
+
+<script>
+var myvid = document.getElementById('myvideo');
+var myvids = [
+  "assets/video1.ogg",
+  "assets/video2.ogg",
+  "assets/video3.ogg"
+  ];
+var activeVideo = 0;
+
+myvid.addEventListener('ended', function(e) {
+  // update the active video index
+  activeVideo = (++activeVideo) % myvids.length;
+
+  // update the video source and play
+  myvid.src = myvids[activeVideo];
+  myvid.play();
+});
+</script>
+</canvas>
+</div>
+</body>
+</html>
